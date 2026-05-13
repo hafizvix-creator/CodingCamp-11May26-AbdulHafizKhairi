@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expense Visualizer</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Expense & Budget Visualizer</h1>
+  <div class="controls">
+    <select id="sortSelect">
+      <option value="">Sort</option>
+      <option value="amount">Amount</option>
+      <option value="category">Category</option>
+    </select>
+    <button id="exportPDF">Export PDF</button>
+  </div>
+</header>
+
+<main class="palette">
+  <div class="card balance-card">
+    <h2>Total Balance</h2>
+    <p id="balance">Rp 0</p>
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+  </div>
+
+  <div class="card form-card">
+    <h2>Add Transaction</h2>
+    <form id="expense-form">
+      <input type="text" id="itemName" placeholder="Item name" required>
+      <input type="number" id="amount" placeholder="Amount" required>
+      <select id="category" required>
+        <option value="">Select Category</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Fun">Fun</option>
+      </select>
+      <input type="text" id="newCategory" placeholder="Add custom category">
+      <button type="submit">Add Transaction</button>
+    </form>
+  </div>
+
+  <div class="card transaction-card">
+    <h2>Transactions</h2>
+    <ul id="transactionList"></ul>
+  </div>
+
+  <div class="card chart-card">
+    <h2>Spending Chart</h2>
+    <canvas id="expenseChart"></canvas>
+  </div>
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
