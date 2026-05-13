@@ -1,8 +1,0 @@
-{
-  "name": "Expense Visualizer",
-  "short_name": "Expense",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#e0f2fe",
-  "theme_color": "#38bdf8"
-}
